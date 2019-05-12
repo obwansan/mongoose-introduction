@@ -1,0 +1,19 @@
+#model methods and collection methods work the same way
+
+You create a model like this:
+```var Cat = mongoose.model("Cat", catSchema);```
+
+and can then use the mongoose model (class?) methods, e.g.
+
+`Cat.find()` or `Cat.create()`
+
+In the mongo shell you use the same methods on collections, e.g. 
+
+`db.cats.find()` or `db.cats.create()`
+
+They are two ways of doing teh same thing.
+
+The collection has the (automagically) pluralised name of the model. This is because when you create the model, the collection is (automagically) created.
+
+It's like the model variable ('Cat') is the way mongoose allows you to interact with mongoDB (i.e. CRUD stuff) in the JS code, rather than directly in the mongo shell. And, of course, you need to be able to code these CRUD operations as part of the app / program, not just manually manipulate the collection via the command line.
+
